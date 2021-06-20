@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>SCSE</title>
+</head>
+<body>
+  <div class="jumbotron">
+
+      <!-- Github Link Icon -->
+      <a href="https://github.com/ruthetum/SCSE">
+          <img src="https://image.flaticon.com/icons/png/512/25/25231.png" width="40" height="40">
+      </a>
+
+      <!-- Title & Description -->
+      <p>
+      <h1 class="title"><span class="badge badge-secondary">Single Camera Speed Estimation</span></h1></p>
+      <p class="lead">Deep Learning based Car Object Detection and Speed Estimation with Single Camera</p>
+      <hr class="my-4">
+
+      <!-- Video files -->
+      <div class="input-group mb-3" id="video-groups">
+          <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">MP4 Files</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose a video file</option>
+              <option value="1">Video1.mp4</option>
+              <option value="2">Video2.mp4</option>
+              <option value="3">Video3.mp4</option>
+          </select>
+      </div>
+
+      <!-- Video Player -->
+      <div class="video">
+          <p>
+              <video class="video-player" controls preload="none" data-setup='{ "aspectRatio":"640:300", "playbackRates": [1, 1.5, 2] }'>
+                  <source src="" type='video/mp4'/>
+              </video>
+          </p>
+      </div>
+
+      <!-- Input Values -->
+      <form action="{{ url_for('main.index', value1=value1, value2=value2, value3=value3) }}" method="post"
+            class="input-values">
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">Height of Camera (m)</span>
+              </div>
+              <input name="value1" type="text" class="form-control" placeholder="4" value={{ value1 }}
+                     aria-label="Username"
+                     aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon2">Angle of Camera (degree)</span>
+              </div>
+              <input name="value2" type="text" class="form-control" placeholder="10" value={{ value2 }}
+                     aria-label="Username"
+                     aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">FPS (Frame Per Second)</span>
+              </div>
+              <input name="value3" type="text" class="form-control" placeholder="30" value={{ value3 }}
+                     aria-label="Username"
+                     aria-describedby="basic-addon1">
+          </div>
+          <!-- Button -->
+          <div class="mybtn">
+          <button type="submit" class="btn btn-secondary btn-lg">Confirm</button>
+          </div>
+      </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <p>Copyright © 2021 SCSE. All rights reserved.</p>
+      <p>Contributors 김희동 배시은 이재환</p>
+  </footer>
+</body>
+</html>

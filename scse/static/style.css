@@ -1,0 +1,30 @@
+* {
+    margin: auto;
+}
+.title {
+    text-align: center;
+}
+
+.lead {
+    text-align: center;
+}
+#video-groups {
+    width: 800px;
+}
+.video {
+    width: 800px;
+}
+.video-player {
+    width: 800px;
+    height: 500px;
+}
+.input-values {
+    width: 800px;
+}
+.mybtn {
+    text-align: center;
+}
+.footer {
+    text-align: center;
+    color: darkgray;
+}
